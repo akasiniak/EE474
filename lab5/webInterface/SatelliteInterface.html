@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Satellite Interface</title>
+        <script type="text/javascript" src="sateliteInterface.js"></script>
+    </head>
+    <body>
+        <h1>Satellite Name: <span id="satname">Sat-Satington</span></h1>
+        <h1>Date: <span id="date"></span></h1>
+        <h1>Operator: <span id="operator">Allan</span></h1>
+        <hr>
+        <h1>Fuel Low: <span id="fuellow"></span></h1>
+        <h1>Battery Low: <span id="batterylow"></span></h1>
+        <h1>Solar Panel State: <span id="solarpanelstate"></span></h1>
+        <h1>Battery Level: <span id="batterylevel"></span></h1>
+        <h1>Fuel Level: <span id="fuellevel"></span></h1>
+        <h1>Power Consumption: <span id="powerconsumption"></span></h1>
+        <h1>Power Generation: <span id="powergeneration"></span></h1>
+        <h1>Battery Temperature <span id="batterytemperature1"></span>C <span id="batterytemperature2"></span>C</h1>
+        <h1>Transport Distance: <span id="transportdistance"></span></h1>
+        <h1>Image Data: <span id="imagedata"></span></h1>
+        <h1>Last Response: <span id="response"></span></h1>
+        <hr>
+        <h2>Start/Stop Measurements</h2>
+        <button id="startbtn" class="command">Start</button>
+        <button id="stopbtn" class="command">Stop</button>
+        <hr>
+        <h2>Display Controls</h2>
+        <button id="displaybtn" class="command">Toggle Display</button>
+        <hr>
+        <h2>Thruster Controls</h2>
+        <fieldset>
+            <legend>Thruster Options</legend>
+            <label for="leftthrust">left</label>
+            <input type="checkbox" name="leftthrust" value="left" id="leftthrust">
+            <label for="rightthrust">right</label>
+            <input type="checkbox" name="rightthrust" value="right" id="rightthrust">
+            <label for="upthrust">up</label>
+            <input type="checkbox" name="upthrust" value="up" id="upthrust">
+            <label for="downthrust">down</label>
+            <input type="checkbox" name="downthrust" value="down" id="downthrust">
+            <label for="magnitude">magnitude (0-15)</label>
+            <input type="number" id="magnitude" min="0" max="15">
+            <label for="duration">duration (0-255)</label>
+            <input type="number" id="duration" min="0" max="255">
+        </fieldset>
+        <button id="changethrusters" class="command">Submit</button>
+        
+        <hr>
+        <h2>Request Data</h2>
+        <select id="requesteddata">
+            <option value="D">Battery Temperature</option>
+            <option value="B">Battery Level</option>
+            <option value="T">Transport Distance</option>
+            <option value="I">Image Data</option>
+        </select>
+        <button id="databtn" class="command">Request</button>
+        <hr>
+        <h2>Vechicle Controls</h2>
+        <select id="vechilecommand">
+            <optgroup label="Movement">
+                <option value="F">forward</option>
+                <option value="B">backward</option>
+                <option value="L">left</option>
+                <option value="R">right</option>
+            </optgroup>
+            <optgroup label="Drilling">
+                <option value="D">down (start)</option>
+                <option value="H">up (stop)</option>
+            </optgroup>
+            <optgroup label="Image Capture">
+                <option value="S">start image capture</option>
+                <option value="I">send image data</option>
+            </optgroup>
+        </select>
+        <button id="vechiclebtn" class="command">Send</button>
+        <hr>
+        <h2>Pirate Defense</h2>
+        <button id="photonbtn" class="command">Fire Photons</button>
+        <button id="torpidobtn" class="command">Fire Torpido</button>
+    </body>
+</html>

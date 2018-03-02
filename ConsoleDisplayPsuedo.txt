@@ -1,0 +1,16 @@
+
+void ConsoleDisplay(void* CDD) {
+	cast data from void* to consoleDisplayData
+
+	Intialize gpio pins
+		select pin
+		set to input
+	gpioValue = value of switch
+
+	if (gpioValue) {
+		print statuses
+	} else {
+		print annucations
+	}
+	close files
+}
